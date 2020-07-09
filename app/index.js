@@ -10,7 +10,7 @@ InitiateMongoConnection();
 const app = express();
 
 // PORT 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -25,3 +25,5 @@ app.use("/user", signup); // for signup feature
   app.listen(PORT, (req, res) => {
     console.log(`Server Started at PORT ${PORT}`);
   });
+
+  module.exports = app;
