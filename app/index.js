@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const InitiateMongoConnection = require("./config/db");
 const signup = require("./routes/user"); //signup route
+const login = require("./routes/login"); //login route
 
 
 // Initiate Mongo Server
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
   });
 
 app.use("/user", signup); // for signup feature
+app.use("/user", login); // for login feature
 
 
   app.listen(PORT, (req, res) => {
