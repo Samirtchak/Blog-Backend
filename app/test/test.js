@@ -97,5 +97,40 @@ it('invalid mail test', (done) => {
 })
 
 
+// test for the Login part
+
+describe('POST /login', () => {
+
+    it('enter an inexisting email', (done) => {
+        chai.request(app)
+            .post('/user/login')
+            .send({email:'billy@example.com', password:'wingrove'})
+            .end((err,res) => {
+                expect(err).to.be.null
+                expect(res).to.have.status(400);
+                expect(res).to.be.json;
+                done();
+            })
+
+    })
+
+    it('enter an good username but invalid password', (done) => {
+        chai.request(app)
+            .post('/user/login')
+            .send({email:'testuser@example.com', password:'wingrove'})
+            .end((err,res) => {
+                expect(err).to.be.null
+                expect(res).to.have.status(400);
+                expect(res).to.be.json;
+                done();
+            })
+
+    })
+
+
+
+
+})
+
 
     
