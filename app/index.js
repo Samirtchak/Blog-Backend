@@ -4,6 +4,8 @@ const InitiateMongoConnection = require("./config/db");
 const signup = require("./routes/user"); //signup route
 const login = require("./routes/login"); //login route
 const article = require("./routes/article"); //article route
+const get_all_article = require("./routes/getallarticle"); //get all articles route
+
 
 
 // Initiate Mongo Server
@@ -24,6 +26,8 @@ app.get("/", (req, res) => {
 app.use("/user", signup); // for signup feature
 app.use("/user", login); // for login feature
 app.use("/article", article); // for article feature
+app.use("/article", get_all_article); // for get article feature
+
 
 
 
