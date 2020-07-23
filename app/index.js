@@ -7,6 +7,7 @@ const article = require("./routes/article"); //article route
 const get_all_article = require("./routes/getallarticle"); //get all articles route
 const get_article_by_id = require("./routes/getarticlebyId"); //get all article by id route
 const update_article = require("./routes/updateArticle"); // update an article route
+const postComment = require("./routes/postComment"); // post an article route
 
 
 
@@ -31,8 +32,7 @@ app.use("/article", article); // for article feature
 app.use("/article", get_all_article); // for get article feature
 app.use("/article", get_article_by_id); // for get article by id feature
 app.use("/article", update_article); // for update an article feature
-
-
+app.use("/article", postComment); // for update an article feature
 
 
   app.listen(PORT, (req, res) => {
