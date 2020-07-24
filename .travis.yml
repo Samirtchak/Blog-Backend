@@ -1,0 +1,3 @@
+language: node_js # Sets which engine use to build the project  
+node_js: "node"
+services: mongodb  
